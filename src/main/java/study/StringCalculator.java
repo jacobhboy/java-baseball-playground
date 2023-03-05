@@ -24,7 +24,7 @@ public class StringCalculator {
     }
 
     private static boolean validatingExpression(String line) {
-        Pattern pattern = Pattern.compile("^[+\\-]?\\d( ?[*\\-+/] ?\\d)*$");
+        Pattern pattern = Pattern.compile("^[+\\-]?\\d*( ?[*\\-+/] ?\\d*)*$");
         Matcher matcher = pattern.matcher(line);
 
         return matcher.find();
