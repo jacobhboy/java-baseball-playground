@@ -23,7 +23,7 @@ public abstract class Balls {
         return !doesSplitNumberHasSameNumber(splitNumber);
     }
 
-    private static boolean doesSplitNumberHasSameNumber(List<String> splitNumber) {
+    private static boolean doesSplitNumberHasSameNumber(final List<String> splitNumber) {
         for (int i = 0, length = splitNumber.size(); i < length; i++) {
             if (splitNumber.get(i).equals("0")) return true;
             if (doesNumbersHasSameNumber(splitNumber, i)) return true;
@@ -37,13 +37,13 @@ public abstract class Balls {
     }
 
 
-    private static boolean doesNumbersHasSameNumber(List<String> everyNumbers, int i) {
+    private static boolean doesNumbersHasSameNumber(final List<String> everyNumbers, final int i) {
         int numberNextToI = (i + 1) % 3;
 
         return everyNumbers.get(i).equals(everyNumbers.get(numberNextToI));
     }
 
-    protected Balls(List<Ball> balls) {
+    protected Balls(final List<Ball> balls) {
         this.balls = balls;
     }
 

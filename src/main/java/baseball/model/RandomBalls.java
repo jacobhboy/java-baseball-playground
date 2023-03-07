@@ -17,7 +17,7 @@ public class RandomBalls extends Balls {
         return randomNumber.nextInt() % 1000;
     }
 
-    protected RandomBalls(List<Ball> balls) {
+    protected RandomBalls(final List<Ball> balls) {
         super(balls);
     }
 }
