@@ -1,60 +1,75 @@
 package baseball;
 
+import baseball.model.Ball;
+import baseball.model.Balls;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BallTest {
 
-    @Test
-    void createBalls() {
-        Balls balls = Balls.BallsFactory(432);
+    static class BallsImpl extends Balls{
 
-        List<String> everyBall = balls.getBalls();
+        static Balls BallsFactory(int number){
+            if(createBalls(number) == null)
+                return null;
 
-        System.out.println("everyBall = " + everyBall);
+            return new BallsImpl(createBalls(number));
+        }
 
-        assertThat(everyBall.get(0)).isEqualTo("4");
-        assertThat(everyBall.get(1)).isEqualTo("3");
-        assertThat(everyBall.get(2)).isEqualTo("2");
+        protected BallsImpl(List<Ball> balls) {
+            super(balls);
+        }
     }
 
+
     @Test
-    void ifBallIsSmallThanAHundred() {
+    void createBalls() {
         //given
-        int number = 97;
+        final Balls balls = BallsImpl.BallsFactory(432);
         //when
-        boolean isBallValid = Balls.isNumberValid(number);
+        List<Ball> everyBall = balls.getBalls();
         //then
-        assertThat(isBallValid).isEqualTo(false);
+        assertAll(() -> {
+            assertThat(everyBall.get(0).getBallNumber()).isEqualTo("4");
+            assertThat(everyBall.get(1).getBallNumber()).isEqualTo("3");
+            assertThat(everyBall.get(2).getBallNumber()).isEqualTo("2");
+        });
     }
 
     @Test
     void ifBallsHaveZero() {
         //given
-        int number1 = 703;
-        int number2 = 340;
+        final int number1 = 703;
+        final int number2 = 340;
         //when
-        boolean isNumber1Valid = Balls.isNumberValid(number1);
-        boolean isNumber2Valid = Balls.isNumberValid(number2);
+        Balls balls1 = BallsImpl.BallsFactory(number1);
+        Balls balls2 = BallsImpl.BallsFactory(number2);
+
         //then
-        assertThat(isNumber1Valid).isEqualTo(false);
-        assertThat(isNumber2Valid).isEqualTo(false);
+        assertAll(() -> {
+            assertThat(balls1).isNull();
+            assertThat(balls2).isNull();
+        });
     }
 
     @Test
     void ifBallsHaveSameNumber() {
         //given
-        int number1 = 773;
-        int number2 = 355;
+        final int number1 = 773;
+        final int number2 = 355;
         //when
-        boolean isNumber1Valid = Balls.isNumberValid(number1);
-        boolean isNumber2Valid = Balls.isNumberValid(number2);
+        Balls balls1 = BallsImpl.BallsFactory(number1);
+        Balls balls2 = BallsImpl.BallsFactory(number2);
         //then
-        assertThat(isNumber1Valid).isEqualTo(false);
-        assertThat(isNumber2Valid).isEqualTo(false);
+
+        assertAll(() -> {
+            assertThat(balls1).isNull();
+            assertThat(balls2).isNull();
+        });
     }
 
 }
