@@ -2,6 +2,7 @@ package baseball;
 
 import baseball.model.Balls;
 import baseball.model.CompareBalls;
+import baseball.model.Result;
 import baseball.model.UserBalls;
 import org.junit.jupiter.api.Test;
 
@@ -18,11 +19,11 @@ public class CompareBallsTest {
         Balls balls1 = UserBalls.BallsFactory(432);
         Balls balls2 = UserBalls.BallsFactory(432);
         //when
-        List<Integer> integers = CompareBalls.compareBalls(balls1, balls2);
+        Result result = CompareBalls.compareBalls(balls1, balls2);
         //then
         assertAll(() ->{
-            assertThat(integers.get(0)).isEqualTo(3);
-            assertThat(integers.get(1)).isEqualTo(0);
+            assertThat(result.getBall()).isEqualTo(0);
+            assertThat(result.getStrike()).isEqualTo(3);
         });
     }
 
@@ -32,12 +33,11 @@ public class CompareBallsTest {
         Balls balls1 = UserBalls.BallsFactory(132);
         Balls balls2 = UserBalls.BallsFactory(371);
         //when
-        List<Integer> integers = CompareBalls.compareBalls(balls1, balls2);
-        System.out.println(integers);
+        Result result = CompareBalls.compareBalls(balls1, balls2);
         //then
         assertAll(() ->{
-            assertThat(integers.get(0)).isEqualTo(0);
-            assertThat(integers.get(1)).isEqualTo(2);
+            assertThat(result.getBall()).isEqualTo(2);
+            assertThat(result.getStrike()).isEqualTo(0);
         });
     }
 
@@ -47,12 +47,11 @@ public class CompareBallsTest {
         Balls balls1 = UserBalls.BallsFactory(692);
         Balls balls2 = UserBalls.BallsFactory(296);
         //when
-        List<Integer> integers = CompareBalls.compareBalls(balls1, balls2);
-        System.out.println(integers);
+        Result result = CompareBalls.compareBalls(balls1, balls2);
         //then
         assertAll(() ->{
-            assertThat(integers.get(0)).isEqualTo(1);
-            assertThat(integers.get(1)).isEqualTo(2);
+            assertThat(result.getBall()).isEqualTo(2);
+            assertThat(result.getStrike()).isEqualTo(1);
         });
     }
 
@@ -62,8 +61,8 @@ public class CompareBallsTest {
         Balls balls1 = UserBalls.BallsFactory(142);
         Balls balls2 = UserBalls.BallsFactory(365);
         //when
-        List<Integer> integers = CompareBalls.compareBalls(balls1, balls2);
+        Result result = CompareBalls.compareBalls(balls1, balls2);
         //then
-        assertThat(integers).isNull();
+        assertThat(result).isNull();
     }
 }

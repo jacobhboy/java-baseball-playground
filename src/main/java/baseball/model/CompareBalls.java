@@ -5,11 +5,11 @@ import java.util.List;
 
 public class CompareBalls {
 
-    public static List<Integer> compareBalls(final Balls randomBalls, final Balls userBalls){
-        int strike = checkStrike(randomBalls, userBalls);
+    public static Result compareBalls(final Balls randomBalls, final Balls userBalls){
         int ball = checkBall(randomBalls, userBalls);
+        int strike = checkStrike(randomBalls, userBalls);
 
-        return result(strike, ball);
+        return new Result(ball, strike);
     }
 
     private static int checkStrike(final Balls randomBalls, final Balls userBalls) {
@@ -34,12 +34,12 @@ public class CompareBalls {
         return ball;
     }
 
-    private static List<Integer> result(final int strike, final int ball) {
+    private static List<Integer> result(final int ball, final int strike) {
         if(strike == 0 && ball == 0) return null;
 
         ArrayList<Integer> result = new ArrayList<>();
-        result.add(strike);
         result.add(ball);
+        result.add(strike);
 
         System.out.println(result);
 
