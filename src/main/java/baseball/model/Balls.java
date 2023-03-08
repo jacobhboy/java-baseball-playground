@@ -21,6 +21,7 @@ public abstract class Balls {
     private static boolean isNumberValid(final int number) {
         if(number < 0) return false;
         List<String> splitNumber = getStringArrayForNumber(number);
+        if(splitNumber.size() != 3) return false;
 
         return !doesSplitNumberHasSameNumber(splitNumber);
     }

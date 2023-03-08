@@ -17,6 +17,7 @@ public class RandomBallTest {
         //given
         //when
         Balls balls = RandomBalls.BallsFactory();
+        System.out.println(balls);
         List<Ball> allBalls = balls.getBalls();
         //then
         assertAll(()->{

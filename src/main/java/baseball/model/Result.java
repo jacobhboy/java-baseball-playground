@@ -4,9 +4,9 @@ public class Result {
     private final int strike;
     private final int ball;
 
-    public Result(final int strike, final int ball){
-        this.strike = strike;
+    public Result(final int ball, final int strike){
         this.ball = ball;
+        this.strike = strike;
     }
 
     public int getStrike() {

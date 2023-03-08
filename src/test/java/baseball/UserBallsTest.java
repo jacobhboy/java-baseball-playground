@@ -32,4 +32,15 @@ public class UserBallsTest {
             assertThat(balls3.getBallNumber(2)).isEqualTo("2");
         });
     }
+
+    @Test
+    void ifBallIsNotHundred(){
+        //given
+        final int number = 42;
+        //when
+        Balls balls = UserBalls.BallsFactory(42);
+        //then
+        assertThat(balls).isNull();
+
+    }
 }

@@ -72,4 +72,17 @@ public class BallsTest {
         });
     }
 
+    @Test
+    void ifBallsIsNotHundred() {
+        //given
+        final int number1 = 63;
+        //when
+        Balls balls1 = BallsImpl.BallsFactory(number1);
+        //then
+
+        assertAll(() -> {
+            assertThat(balls1).isNull();
+        });
+    }
+
 }

@@ -1,8 +1,5 @@
 package baseball.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CompareBalls {
 
     public static Result compareBalls(final Balls randomBalls, final Balls userBalls){
@@ -32,17 +29,5 @@ public class CompareBalls {
 
         }
         return ball;
-    }
-
-    private static List<Integer> result(final int ball, final int strike) {
-        if(strike == 0 && ball == 0) return null;
-
-        ArrayList<Integer> result = new ArrayList<>();
-        result.add(ball);
-        result.add(strike);
-
-        System.out.println(result);
-
-        return result;
     }
 }

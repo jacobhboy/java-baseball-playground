@@ -4,6 +4,7 @@ import baseball.model.Balls;
 import baseball.model.CompareBalls;
 import baseball.model.Result;
 import baseball.model.UserBalls;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -63,6 +64,9 @@ public class CompareBallsTest {
         //when
         Result result = CompareBalls.compareBalls(balls1, balls2);
         //then
-        assertThat(result).isNull();
+        assertAll(() ->{
+            Assertions.assertThat(result.getStrike()).isEqualTo(0);
+            Assertions.assertThat(result.getBall()).isEqualTo(0);
+        });
     }
 }
