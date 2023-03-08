@@ -28,12 +28,21 @@ public class BaseballController {
         MessageOutput.printNumberMessage();
         Balls userBall = UserBallsInput.getUserBall();
 
-        while(userBall == null) MessageOutput.printUserNumberNotValid();
+        userBall = checkUserBallValid(userBall);
 
         Result result = CompareBalls.compareBalls(randomBalls, userBall);
         ResultOutput.printTurnResult(result);
 
         return isThisGameNotFinished(result);
+    }
+
+    private static Balls checkUserBallValid(Balls userBall) {
+        while(userBall == null) {
+            MessageOutput.printUserNumberNotValid();
+            MessageOutput.printNumberMessage();
+            userBall = UserBallsInput.getUserBall();
+        }
+        return userBall;
     }
 
     private static boolean isThisGameNotFinished(final Result result) {
