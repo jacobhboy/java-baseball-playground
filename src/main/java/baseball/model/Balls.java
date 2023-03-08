@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public abstract class Balls {
+
+    public static final int BALLSSIZE = 3;
     private final List<Ball> balls;
 
     protected static List<Ball> createBalls(final int number) {
@@ -49,5 +51,9 @@ public abstract class Balls {
 
     public List<Ball> getBalls() {
         return balls;
+    }
+
+    public String getBallNumber(int number) {
+        return getBalls().get(number).getBallNumber();
     }
 }

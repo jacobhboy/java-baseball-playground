@@ -9,7 +9,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BallTest {
+public class BallsTest {
 
     static class BallsImpl extends Balls{
 
