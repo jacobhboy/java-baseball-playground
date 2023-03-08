@@ -53,7 +53,7 @@ public abstract class Balls {
         return balls;
     }
 
-    public String getBallNumber(int number) {
+    public String getBallNumber(final int number) {
         return getBalls().get(number).getBallNumber();
     }
 }

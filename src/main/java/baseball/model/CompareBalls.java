@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CompareBalls {
 
-    public static List<Integer> compareBalls(Balls randomBalls, Balls userBalls){
+    public static List<Integer> compareBalls(final Balls randomBalls, final Balls userBalls){
         int strike = checkStrike(randomBalls, userBalls);
         int ball = checkBall(randomBalls, userBalls);
 
