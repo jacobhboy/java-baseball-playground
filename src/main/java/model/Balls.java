@@ -18,14 +18,14 @@ public class Balls {
         return balls;
     }
 
-    public Result compare(Balls compareBalls) {
+    public Result compare(final Balls compareBalls) {
         int balls = checkBalls(compareBalls);
         int strikes = checkStrike(compareBalls);
 
         return new Result(balls, strikes);
     }
 
-    private int checkBalls(Balls compareBalls) {
+    private int checkBalls(final Balls compareBalls) {
         int i = 0, ballNum = 0;
         for (Ball ball : balls) {
             int ballNextToI = (i + 1) % 3;
@@ -39,7 +39,7 @@ public class Balls {
         return ballNum;
     }
 
-    private int checkStrike(Balls compareBalls) {
+    private int checkStrike(final Balls compareBalls) {
         int i = 0, strikeNum = 0;
 
         for (Ball ball : balls) {
@@ -50,7 +50,7 @@ public class Balls {
         return strikeNum;
     }
 
-    private Integer getBallNumber(int index){
+    private Integer getBallNumber(final int index){
         return balls.get(index).getNumber();
     }
 }
