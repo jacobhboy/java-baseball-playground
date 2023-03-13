@@ -8,14 +8,14 @@ public class RandomBallsTest {
     @Test
     void createRandomBall(){
         //given
-        int randomNumber1 = RandomNumber.randomNumber();
-        int randomNumber2 = RandomNumber.randomNumber();
-        int randomNumber3 = RandomNumber.randomNumber();
-        int randomNumber4 = RandomNumber.randomNumber();
-        int randomNumber5 = RandomNumber.randomNumber();
-        int randomNumber6 = RandomNumber.randomNumber();
-        int randomNumber7 = RandomNumber.randomNumber();
-        int randomNumber8 = RandomNumber.randomNumber();
+        int randomNumber1 = RandomNumber.getRandomNumber();
+        int randomNumber2 = RandomNumber.getRandomNumber();
+        int randomNumber3 = RandomNumber.getRandomNumber();
+        int randomNumber4 = RandomNumber.getRandomNumber();
+        int randomNumber5 = RandomNumber.getRandomNumber();
+        int randomNumber6 = RandomNumber.getRandomNumber();
+        int randomNumber7 = RandomNumber.getRandomNumber();
+        int randomNumber8 = RandomNumber.getRandomNumber();
 
         //when, then
         Assertions.assertThat(randomNumber1).isBetween(100, 1000);
