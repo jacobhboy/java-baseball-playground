@@ -6,6 +6,10 @@ public class UserNumber {
     public static int getUserNumber(){
         Scanner scanner = new Scanner(System.in);
 
-        return scanner.nextInt();
+        int userNumber = scanner.nextInt();
+
+        ValidateNumber.validate(userNumber);
+
+        return userNumber;
     }
 }
