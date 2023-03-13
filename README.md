@@ -23,8 +23,8 @@
 
 ### view
 #### input
-- [ ] 사용자에게 세게 세 자릿수를 입력받는다.
-  - [ ] 사용자가 입력한 수가 세 자릿수가 아닐 경우 IllegalArgumentsException 발생시킨다.
+- [X] 사용자에게 세게 세 자릿수를 입력받는다.
+  - [X] 사용자가 입력한 수가 세 자릿수가 아닐 경우 IllegalArgumentsException 발생시킨다.
 
 #### output
 - [ ] 비교 결과를 매 턴 마다 출력한다.
