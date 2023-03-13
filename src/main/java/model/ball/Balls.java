@@ -8,7 +8,7 @@ import java.util.List;
 public class Balls {
     private final List<Ball> balls  = new ArrayList<>();
 
-    public static Balls createBallsFactory(final int number) {
+    public static Balls create(final int number) {
         Balls balls = new Balls();
         String[] splitNumber = String.valueOf(number).split("");
 

@@ -14,8 +14,8 @@ public class MakeBallsTest {
     @DisplayName("3스트라이크")
     void threeStrike(){
         //given
-        Balls createdBalls = Balls.createBallsFactory(123);
-        Balls compareBalls = Balls.createBallsFactory(123);
+        Balls createdBalls = Balls.create(123);
+        Balls compareBalls = Balls.create(123);
         //when
         Result result = createdBalls.compare(compareBalls);
         //then
@@ -29,8 +29,8 @@ public class MakeBallsTest {
     @DisplayName("3볼")
     void threeBall(){
         //given
-        Balls createdBalls = Balls.createBallsFactory(123);
-        Balls compareBalls = Balls.createBallsFactory(312);
+        Balls createdBalls = Balls.create(123);
+        Balls compareBalls = Balls.create(312);
         //when
         Result result = createdBalls.compare(compareBalls);
         //then
@@ -44,8 +44,8 @@ public class MakeBallsTest {
     @DisplayName("미씽")
     void missing(){
         //given
-        Balls createdBalls = Balls.createBallsFactory(123);
-        Balls compareBalls = Balls.createBallsFactory(456);
+        Balls createdBalls = Balls.create(123);
+        Balls compareBalls = Balls.create(456);
         //when
         Result result = createdBalls.compare(compareBalls);
         //then
