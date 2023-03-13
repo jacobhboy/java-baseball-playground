@@ -1,6 +1,6 @@
 package study;
 
-import model.Balls;
+import model.ball.Balls;
 import model.Result;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

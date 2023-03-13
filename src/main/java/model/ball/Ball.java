@@ -1,4 +1,4 @@
-package model;
+package model.ball;
 
 public class Ball {
     private final Integer number;
