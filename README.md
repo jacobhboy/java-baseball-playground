@@ -27,6 +27,6 @@
   - [X] 사용자가 입력한 수가 세 자릿수가 아닐 경우 IllegalArgumentsException 발생시킨다.
 
 #### output
-- [ ] 비교 결과를 매 턴 마다 출력한다.
+- [X] 비교 결과를 매 턴 마다 출력한다.
 
 ### controller

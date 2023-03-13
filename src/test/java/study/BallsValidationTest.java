@@ -1,7 +1,5 @@
 package study;
 
-import model.ball.Balls;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import view.input.ValidateNumber;
 
