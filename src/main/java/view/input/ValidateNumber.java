@@ -13,13 +13,13 @@ public class ValidateNumber {
             int nextChar = (i + 1) % 3;
             int beforeChar = (i + 2) % 3;
 
-            if(split[i].equals(split[nextChar]) && split[i].equals(split[beforeChar]))
+            if(split[i].equals(split[nextChar]) || split[i].equals(split[beforeChar]))
                 throw new IllegalArgumentException("같은 수는 입력될 수 없습니다.");
         }
     }
 
     private static void isNumberHundredNumber(final int number) {
-        if(number < 100 || 1000 < number)
+        if(number <= 100 || 1000 <= number)
             throw new IllegalArgumentException("세 자릿수를 입력해주세요.");
     }
 }
