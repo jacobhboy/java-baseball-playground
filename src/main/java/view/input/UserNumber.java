@@ -1,5 +1,7 @@
 package view.input;
 
+import view.output.MessageOutput;
+
 import java.util.Scanner;
 
 public class UserNumber {
@@ -8,7 +10,14 @@ public class UserNumber {
     public static int getUserNumber(){
         int userNumber = scanner.nextInt();
 
-        ValidateNumber.validate(userNumber);
+        try {
+            ValidateNumber.validate(userNumber);
+        }catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            MessageOutput.askNumber();
+
+            return getUserNumber();
+        }
 
         return userNumber;
     }
