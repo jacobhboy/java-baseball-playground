@@ -5,6 +5,14 @@ public class ValidateNumber {
     public static void validate(final int number){
         isNumberHundredNumber(number);
         allNumberDifferent(number);
+        allNumberNotZero(number);
+    }
+
+    private static void allNumberNotZero(final int number) {
+        String[] split = String.valueOf(number).split("");
+        for (String s : split) {
+            if(s.equals("0")) throw new IllegalArgumentException("0은 들어갈 수 없습니다.");
+        }
     }
 
     private static void allNumberDifferent(final int number) {
